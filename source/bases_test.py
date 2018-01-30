@@ -23,6 +23,7 @@ class BasesDecodeTest(unittest.TestCase):
         assert decode('1101', 2) == 13
         assert decode('1110', 2) == 14
         assert decode('1111', 2) == 15
+        assert decode('10000', 2) == 16
 
     def test_decode_decimal(self):
         assert decode('5', 10) == 5

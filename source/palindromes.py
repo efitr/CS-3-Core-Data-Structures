@@ -6,6 +6,9 @@ import string
 # string.ascii_uppercase is 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 # string.ascii_letters is ascii_lowercase + ascii_uppercase
 
+def clean(palindrome):
+    palindrome = palindrome.string.ascii_letters
+    return palindrome
 
 def is_palindrome(text):
     """A string of characters is a palindrome if it reads the same forwards and
@@ -29,7 +32,8 @@ def is_palindrome_recursive(text, left=None, right=None):
     pass
     # once implemented, change is_palindrome to call is_palindrome_recursive
     # to verify that your iterative implementation passes all tests
-
+if left is none and right is None
+#if righ
 
 def main():
     import sys
