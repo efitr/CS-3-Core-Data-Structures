@@ -7,6 +7,7 @@ import unittest
 class BasesDecodeTest(unittest.TestCase):
 
     def test_decode_binary(self):
+        #first input binary number and base
         assert decode('0', 2) == 0
         assert decode('1', 2) == 1
         assert decode('10', 2) == 2

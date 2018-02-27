@@ -1,6 +1,7 @@
 #!python
 
 import string
+import math
 # Hint: Use these string constants to encode/decode hexadecimal digits and more
 # string.digits is '0123456789'
 # string.hexdigits is '0123456789abcdefABCDEF'
@@ -9,7 +10,8 @@ import string
 # string.ascii_letters is ascii_lowercase + ascii_uppercase
 # string.printable is digits + ascii_letters + punctuation + whitespace
 
-
+#++++++++++++++++++++++++++++++++Change Base 2 to 10++++++++++++++++++++++++++++++++++
+ 
 def decode(digits, base):
     """Decode given digits in given base to number in base 10.
     digits: str -- string representation of number (in given base)
@@ -21,19 +23,33 @@ def decode(digits, base):
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
     # TODO: Decode digits from binary (base 2)
     # ...
-    if base == 2:
+    #list(digits)
+    #the loop can't go over the number of digits there are
+    #it will go has many positions as the number of digits
+    num = 0
+    digits = list()
+    digit_base_10 = 0
+    while num < len(digits): 
+        
+        #This sums to digit_... the base taken to the number of
+        # iteration 
+#Mientras que num sea menor a la longitud de los digits
+#a digit_ba... se le agrega la base elevada 
+        digit_base_10 += math.pow(base, range(num))
+        num += 1
+
+
+    return digit_base_10
 
     # TODO: Decode digits from hexadecimal (base 16)
     # ...
-    elif base == 16:
+
 
     # TODO: Decode digits from any base (2 up to 36)
     # ...
-    elif base == 36:
-        #get it from Decimal to Binary
 
-        #first handle cases in case it is different values
-
+#++++++++++++++++++++++ Number in base 10 to the same number ++++++++++++++
+#++++++++++++++++++++++ in any base ++++++++++++++++++++++++++++++++++++++++
 
 def encode(number, base):
     """Encode given number in base 10 to digits in given base.
