@@ -93,11 +93,11 @@ class LinkedList(object):
             
             node = node.next
         return None
-    
+    '''
     def replace(self, old_item, new_item):
         #change the item
         #new_
-
+    '''
     def delete(self, item):
         node = self.head
         previous = None
@@ -132,7 +132,7 @@ def test_linked_list():
     ll = LinkedList()
     print(ll)
 
-        print('Appending items:')
+    print('Appending items:')
     ll.append('A')
     print(ll)
     ll.append('B')

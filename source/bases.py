@@ -10,38 +10,28 @@ import math
 # string.ascii_letters is ascii_lowercase + ascii_uppercase
 # string.printable is digits + ascii_letters + punctuation + whitespace
 
-#++++++++++++++++++++++++++++++++Change Base 2 to 10++++++++++++++++++++++++++++++++++
+#++++++++++++++++++++++++++++++++Change Any Base Number to Base 10++++++++++++++++++++++++++++++++++
  
 def decode(digits, base):
 #Objetives: convert any number from any base to base 10
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
-    
-    num_base_10 = {0: "0", 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9", 10: "A", 11: "B", 12: "C", 13: "D", 14: "E", 15: "F", 16: "G", 17: "H", 18: "I", 19: "J", 20: "K", 21: "L", 22: "M", 23: "N", 24: "O", 25: "P", 26: "Q", 27: "R", 28: "S", 29: "T", 30: "U", 31: "V", 32: "W", 33: "X", 34: "Y", 35: "Z"}
-    # TODO: Decode digits from binary (base 2)
+    #key string and value number
+    all_digits = {"0":0, "1":1, "2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "A":10, "B":11, "C":12, "D":13, "E":14, "F":15, "G":16, "H":17, "I":18, "J":19, "K":20, "L":21, "M":22, "N":23, "O":24, "P":25, "Q":26, "R":27, "S":28, "T":29, "U":30, "V":31, "W":32, "X":33, "Y":34, "Z":35}
 
-    #converts the digits in a list of those digits
-    list(digits)
-    #reverses the whole list
-    digits = [::-1]
-    
-    #iterate through every digits for has many digits
-    #
-    for digits in len(digits):
+    #digits to string
+    digits = str(digits).upper()
 
-    #the loop can't go over the number of digits there are
-    #it will go has many positions as the number of digits
+    num_base_10 = 0
+    #repite cada string en digitos
+    for index, num in enumerate(digits[::-1]):
+        # get the value for the given digit 
+        current_digit = all_digits[num]
+        num_base_10 += current_digit * math.pow(base, index)
 
-    digit_base_10 = 0
-    while num < len(digits): 
-        
-
-        digit_base_10 += math.pow(base, range(num))
-        num += 1
-
-    return int("digits", 10)
+    return num_base_10
 
 #++++++++++++++++++++++ Number in base 10 to the same number ++++++++++++++
-#++++++++++++++++++++++ in any base ++++++++++++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++ in any base +++++++++++++++++++++++++++++
 
 def encode(number, base):
     """Encode given number in base 10 to digits in given base.
@@ -52,12 +42,16 @@ def encode(number, base):
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
     # Handle unsigned numbers only for now
     assert number >= 0, 'number is negative: {}'.format(number)
-    # TODO: Encode number in binary (base 2)
-    # ...
-    # TODO: Encode number in hexadecimal (base 16)
-    # ...
-    # TODO: Encode number in any base (2 up to 36)
-    # ...
+    
+    all_digits = {"0":0, "1":1, "2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "A":10, "B":11, "C":12, "D":13, "E":14, "F":15, "G":16, "H":17, "I":18, "J":19, "K":20, "L":21, "M":22, "N":23, "O":24, "P":25, "Q":26, "R":27, "S":28, "T":29, "U":30, "V":31, "W":32, "X":33, "Y":34, "Z":35}
+
+    number = str(number).upper()  
+
+    #The number in base 10 follows a 10 digit pattern 0 ... 9
+    #The number in binary follow a 2 digit pattern 0 1
+    
+    #Count every number from 1 to whatever number there is
+    #
 
 
 def convert(digits, base1, base2):
