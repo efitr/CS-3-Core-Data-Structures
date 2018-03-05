@@ -19,12 +19,18 @@ class RecursionTest(unittest.TestCase):
         assert factorial(9) == 9*8*7*6*5*4*3*2*1
         assert factorial(10) == 10*9*8*7*6*5*4*3*2*1
 
+    def test_factorial_with_medium_integers(self):
+        assert factorial(11) == 11*10*9*8*7*6*5*4*3*2*1
+        assert factorial(12) == 12*11*10*9*8*7*6*5*4*3*2*1
+        assert factorial(13) == 13*12*11*10*9*8*7*6*5*4*3*2*1
+        assert factorial(14) == 14*13*12*11*10*9*8*7*6*5*4*3*2*1
+
     def test_factorial_with_large_integers(self):
         assert factorial(15) == 1307674368000
         assert factorial(20) == 2432902008176640000
         assert factorial(25) == 15511210043330985984000000
         assert factorial(30) == 265252859812191058636308480000000
-
+        assert factorial(40) == 815915283247897734345611269596115894272000000000
     def test_factorial_with_negative_integers(self):
         # factorial should raise a ValueError for n < 0
         with self.assertRaises(ValueError, msg='function undefined for n < 0'):
@@ -36,6 +42,11 @@ class RecursionTest(unittest.TestCase):
         with self.assertRaises(ValueError, msg='function undefined for float'):
             factorial(2.0)
             factorial(3.14159)
+    
+    def test_factorial_with_negative_floating_point_number(self):
+        with self.assertRaises(ValueError, msg='function undefined for negative float'):
+            factorial(-1.0)
+            factorial(-2.0)
 
 
 if __name__ == '__main__':
