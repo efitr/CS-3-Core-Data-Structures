@@ -1,6 +1,6 @@
 #!python
 
-from linklist import LinkedList
+from linkedlist import LinkedList
 
 
 # Implement LinkedStack below, then change the assignment at the bottom
@@ -36,7 +36,7 @@ class LinkedStack(object):
         """Insert the given item on the top of this stack.
         Running time: O(???) – Why? [TODO]"""
         # TODO: Push given item
-        self.list.prepend 
+        self.list.prepend() 
 
     def peek(self):
         """Return the item on the top of this stack without removing it,
@@ -52,7 +52,7 @@ class LinkedStack(object):
         or raise ValueError if this stack is empty.
         Running time: O(???) – Why? [TODO]"""
         # TODO: Remove and return top item, if any
-        if is not self.list.is_empty():
+        if not self.list.is_empty():
             item = self.list.head.data
             self.list.delete(item)
             return item

@@ -1,6 +1,6 @@
 #!python
 
-from linklist import LinkedList
+from linkedlist import LinkedList
 
 
 # Implement LinkedQueue below, then change the assignment at the bottom
@@ -55,6 +55,7 @@ class LinkedQueue(object):
         if self.is_empty():
             raise ValueError("No items in Queue to Dequeue")
         else:
+            #reuse front
             item = self.list.head.data
             self.list.delete(item)
             return item
