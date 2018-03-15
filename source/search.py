@@ -18,11 +18,10 @@ def linear_search_iterative(array, item):
 def linear_search_recursive(array, item, index=0):
     # TODO: implement linear search recursively here
     #index position of the item in the array
-    if index == len(array):             #This happens when the value was not found in the
-        return
-    value = array[index]
-    if value == item:
-        return index
+    if index == len(array):
+        return None  # item was not found in the array
+    if array[index] == item:
+        return index  # item was found at index
     return linear_search_recursive(array, item, index + 1)
 
 
@@ -33,39 +32,36 @@ def binary_search(array, item):
     return binary_search_iterative(array, item)
     # return binary_search_recursive(array, item)
 
-#import math 
+
 def binary_search_iterative(array, item):
     # TODO: implement binary search iteratively here
     first_index = 0
     last_index = len(array)-1
     #this will iterate until it becomes continuous
-    while first_index + 1 < last_index:
-        half = int(last_index +first_index / 2)
+    if item == array[first_index]:
+        return first_index
+    if item == array[last_index]:
+        return last_index
+
+    while first_index <= last_index:
+        half = int((last_index + first_index) / 2)
+        # print('half: {}'.format(half))
          #half point in the array
-        if item == array[0:half]: # the item in the array at this index are the same
-            return half         # its done, found it
-        if item < array[0:half]:          # the item
-            last_index = half
-        if item > array[0:half]:
-            first_index = half
+        if item == array[half]: # item is equal to element in position half at the array
+            return half         # if it is return the position
+        #This is comparing a string against a list
+        if item > array[half]:
+            first_index = half + 1  # ignore left half
 
-
-
-    #we care about where we start to look into
-    #ALWAYS ON A SORTED ARRAY
-
-    #find first index_value, index 0, second find last index_value, index len(array)
-    #The array is check in halves and halves until it becomes 0
-
+        #it must check smaller than it
+        if item < array[half]:  
+            last_index = half - 1  # ignore right half
+    # print('while loop ended. first: {}, last: {}'.format(first_index, last_index))
+    
+   
 
 def binary_search_recursive(array, item, left=None, right=None):
     # TODO: implement binary search recursively here
     pass
     # once implemented, change binary_search to call binary_search_recursive
     # to verify that your recursive implementation passes all tests
-    '''
-    first_index = 0
-    last_index = len(array)-1
-
-    if item is not 
-    '''
