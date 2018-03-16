@@ -43,6 +43,5 @@ class SearchTest(unittest.TestCase):
         assert binary_search(names, 'Jeremy') is None
         assert binary_search(names, 'nobody') is None
 
-
 if __name__ == '__main__':
     unittest.main()

@@ -1,6 +1,6 @@
 #!python
 
-from linkedlist import LinkedList, Node
+from linkedlist import LinkedList, Node 
 import unittest
 
 
@@ -14,7 +14,7 @@ class NodeTest(unittest.TestCase):
 
 
 class LinkedListTest(unittest.TestCase):
-
+    
     def test_init(self):
         ll = LinkedList()
         assert ll.head is None
@@ -72,7 +72,7 @@ class LinkedListTest(unittest.TestCase):
         assert ll.size == 1
         ll.delete('A')
         assert ll.size == 0
-
+    
     def test_get_at_index(self):
         ll = LinkedList(['A', 'B', 'C'])
         assert ll.get_at_index(0) == 'A'  # head item

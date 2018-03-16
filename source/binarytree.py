@@ -16,9 +16,7 @@ class BinaryTreeNode(object):
     def is_leaf(self):
         """Return True if this node is a leaf (has no children)."""
         # TODO: Check if both left child and right child have no value
-        if left is None and right is None:
-            return True
-        return False
+        return self.left is None and self.right is None
         
         #we can do it recursively
         #while it stands true that there is something at the left of it
@@ -30,7 +28,7 @@ class BinaryTreeNode(object):
     def is_branch(self):
         """Return True if this node is a branch (has at least one child)."""
         # TODO: Check if either left child or right child has a value
-        if left is not  None or right is not None:
+        if self.left is not  None or self.right is not None:
             return True
         return False
 
@@ -38,29 +36,25 @@ class BinaryTreeNode(object):
         """Return the height of this node (the number of edges on the longest
         downward path from this node to a descendant leaf node).
         TODO: Best and worst case running time: ??? under what conditions?"""
-        # TODO: Check if left child has a value and if so calculate its height
-        if left is None and right is None:
+        
+        if self.is_leaf():
             return 0
             
+        # Check if left child has a value and if so calculate its height
         height_left = 0
-        if left is not None:
-            height_left = left.height()
-        # TODO: Check if right child has a value and if so calculate its height
-        height_right = 0
-        if right is not None:
-            height_right = right.height()
-
-
-        bigger_height = 0
-        # Return one more than the greater of the left height and right height
-        if height_left > height_right:
-            bigger_height = height_left
-
-        else:
-            bigger_height = height_right
+        if self.left is not None:
+            height_left = self.left.height()
         
-        return bigger_height + 1
+        # Check if right child has a value and if so calculate its height
+        height_right = 0
+        if self.right is not None:
+            height_right = self.right.height()
 
+        # Find the greater of the left height and right height
+        bigger_height = max(height_left, height_right)
+        
+        # Return one more than the greater of the heights
+        return bigger_height + 1
 
 
 class BinarySearchTree(object):
@@ -141,7 +135,7 @@ class BinarySearchTree(object):
         # Loop until we descend past the closest leaf node
         while node is not None:
             # TODO: Check if the given item matches the node's data
-            if ...:
+            if item = node.:
                 # Return the found node
                 return node
             # TODO: Check if the given item is less than the node's data
