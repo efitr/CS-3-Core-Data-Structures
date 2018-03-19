@@ -6,6 +6,7 @@ def contains(text, pattern):
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # TODO: Implement contains here (iteratively and/or recursively)
 
+    #ITERATIVE DONE
     #iterate through each letter in text, giving an index
     if pattern == '':
         return True
@@ -25,6 +26,8 @@ def contains(text, pattern):
     
     return False
 
+    #RECURSIVE ?
+
 def find_index(text, pattern):
     """Return the starting index of the first occurrence of pattern in text,
     or None if not found."""
@@ -32,6 +35,26 @@ def find_index(text, pattern):
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # TODO: Implement find_index here (iteratively and/or recursively)
     
+    #ITERATIVE ?
+    if pattern == '':
+        return 0
+    #I want the position number of the item
+    #if contains(text, pattern) == False:
+    #    return None
+    for index, letter in enumerate(text):
+
+        current_pattern_position = 0
+        #if the current letter equals pattern at position 0
+        if letter == pattern[current_pattern_position]:
+            #to not break the logic of the first for in case the pattern is not found
+            index_in_pattern = index #we create a new index position for the text
+            while text[index_in_pattern] == pattern[current_pattern_position]:
+                index_in_pattern += 1
+                current_pattern_position += 1
+
+                if current_pattern_position == len(pattern):
+                    return index
+    #RECURSIVE ?
 
 def find_all_indexes(text, pattern):
     """Return a list of starting indexes of all occurrences of pattern in text,
@@ -39,6 +62,11 @@ def find_all_indexes(text, pattern):
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # TODO: Implement find_all_indexes here (iteratively and/or recursively)
+
+    #ITERATIVE ?
+
+
+    #RECURSIVE ?
 
 
 def test_string_algorithms(text, pattern):
