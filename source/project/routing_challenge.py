@@ -1,5 +1,5 @@
 
-import string
+
 ''' This is all about managing the movement of information '''
 
 #Find the least costing route through multiple carriers
@@ -35,6 +35,8 @@ import string
 
 #To divide each route_number
 def divide_format(route_number):
+    if route_number[0] is not '+':
+        return None
     if route_number is not None:
         code_area, pricing = route_number.split(",")
     return code_area, pricing
@@ -62,11 +64,12 @@ def cost_of_calling_a_number_iterative(router_list, phone_number):
     
     for item in router_list:
         code_area, pricing = divide_format(item) #return code_area, pricing 
-        print(pricing)
+        
+        #print(code_area, pricing)
         pattern_len = len(code_area)
-        print(phone_number[1:pattern_len])
-        if phone_number[1:pattern_len] == code_area:
-            return print(pricing)
+        #print(phone_number[1:pattern_len])
+        if phone_number[1:pattern_len] == code_area[1:pattern_len]:
+            return pricing
         
 
     #for code_area, cost in router_list:
@@ -82,12 +85,14 @@ def cost_of_calling_a_number_recursive(router_list, phone_number):
     pass
 # len to check the lenght of the item, and see if it would be a good idea to check for more complex analysis
 
-def 
-    #binary search tree, divide all the information 
+#def 
+    #binary search tree, divide all the information, in pockets of information
+    #to be checked concurrently
+
 
 def main():
     phone_number_path = "data/phone-numbers-3.txt"
-    routing_costs_path = "data/route-costs-4.txt"
+    routing_costs_path = "data/route-costs-35000.txt"
     phone_numbers = open(phone_number_path, 'r')
     routing_costs = open(routing_costs_path, 'r')
     #phone_number_route_cost = 
@@ -95,8 +100,8 @@ def main():
     router_list = routing_costs.readlines()
     # print(num_list)
     # print(router_list)
-    found_pricing = cost_of_calling_a_number_iterative(router_list, "+15124156620")
-    #print(found_pricing)
+    found_pricing = cost_of_calling_a_number_iterative(router_list, "+825395459823498243")
+    print(found_pricing)
 
 if __name__ == '__main__':
     main()
