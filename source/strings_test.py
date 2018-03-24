@@ -17,6 +17,7 @@ class StringsTest(unittest.TestCase):
         assert contains('abc', 'abc') is True  # all strings contain themselves
         assert contains('aaa', 'a') is True  # multiple occurrences
         assert contains('aaa', 'aa') is True  # overlapping pattern
+        assert contains('sdsakfbdsljvnsldniwnjsancsilfcsdilnz', 'z') is True
         # TODO: Write more positive test cases with assert is True statements
         # ...
 
@@ -26,6 +27,7 @@ class StringsTest(unittest.TestCase):
         assert contains('abc', 'ac') is False  # important to test close cases
         assert contains('abc', 'az') is False  # first letter, but not last
         assert contains('abc', 'abz') is False  # first 2 letters, but not last
+        assert contains('ejirlgdfknihlsadjnv', 'th') is False
         # TODO: Write more negative test cases with assert is False statements
         # ...
 

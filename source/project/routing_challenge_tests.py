@@ -4,7 +4,9 @@ import unittest
 class RoutingTest(unittest.TestCase):
     
     def test_divide_format(self):
-        assert divide_format("+86153,0.84") is "+86153" and "0.84"
+        prefix, price = divide_format("+86153,0.84")
+        assert  == "+86153"
+        assert  == "0.84"
         assert divide_format("+1426793,0.09") is "+1426793" and "0.09"
 
     #must solve because the function expects 2 but gets 1

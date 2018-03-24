@@ -64,6 +64,31 @@ def find_all_indexes(text, pattern):
     # TODO: Implement find_all_indexes here (iteratively and/or recursively)
 
     #ITERATIVE ?
+    #array of position the pattern was found, everytime
+    position_array = []
+    if pattern == '':
+        for index, letter in enumerate(text):
+            position_array.append(index)
+    return position_array
+    #I want the position number of the item
+    #if contains(text, pattern) == False:
+    #    return None
+    for index, letter in enumerate(text):
+
+        current_pattern_position = 0
+        #if the current letter equals pattern at position 0
+        if letter == pattern[current_pattern_position]:
+            #to not break the logic of the first for in case the pattern is not found
+            
+            index_in_pattern = index #we create a new index position for the text
+            while text[index_in_pattern] == pattern[current_pattern_position]:
+                index_in_pattern += 1
+                current_pattern_position += 1
+
+                if current_pattern_position == len(pattern):
+                    position_array.append(index)
+    return position_array
+    #find_index return the position
 
 
     #RECURSIVE ?
