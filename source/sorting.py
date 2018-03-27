@@ -6,6 +6,22 @@ def is_sorted(items):
     TODO: Running time: ??? Why and under what conditions?
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Check that all adjacent items are in order, return early if not
+    
+    #This is a placeholder to see the previous index
+    previous_index = 0
+    #this will pass through every element in items, has a tuple with an index
+    for index, item in enumerate(items):
+        
+        #
+        if previous_index[]
+
+        else:
+            return False 
+
+    for item in items:
+    #Have to check if the one before itself is smaller
+        if 
+
 
 
 def bubble_sort(items):
@@ -45,8 +61,13 @@ def merge(items1, items2):
     # TODO: Repeat until one list is empty
     # TODO: Find minimum item in both lists and append it to new list
     # TODO: Append remaining items in non-empty list to new list
+    #two lists
+    #if element is not in list1 move to list2?
+    #Have to figure out which list of items is bigger
+    for item1 in items1:
 
-
+        
+    return #list with all the items
 def split_sort_merge(items):
     """Sort given items by splitting list into two approximately equal halves,
     sorting each with an iterative sorting algorithm, and merging results into
