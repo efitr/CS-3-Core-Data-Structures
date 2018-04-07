@@ -27,6 +27,13 @@ class LinkedListTest(unittest.TestCase):
         assert ll.tail.data == 'C'  # last item
         assert ll.size == 3
 
+    def test_init_with_long_list(self):
+        ll = LinkedList(['E', 'G', 'O', 'N'])
+        assert ll.head.data == 'E'
+        #assert ll.head.next == 'G'
+        assert ll.tail.data == 'N'
+        #assert ll.tail.next == None
+
     def test_items(self):
         ll = LinkedList()
         assert ll.items() == []
